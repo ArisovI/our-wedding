@@ -1,0 +1,130 @@
+.opening-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  isolation: isolate;
+  perspective: 2400px;
+  perspective-origin: center;
+}
+
+.opening-cover--hidden {
+  display: none;
+}
+
+.opening-cover__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(160deg, var(--pink-soft) 0%, var(--pink) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.6, 0.05, 0.28, 1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.opening-cover__panel--left {
+  left: 0;
+  transform-origin: left center;
+  border-radius: 0 0 0 0;
+}
+
+.opening-cover__panel--right {
+  right: 0;
+  transform-origin: right center;
+}
+
+.opening-cover--open .opening-cover__panel--left {
+  transform: rotateY(-100deg);
+}
+
+.opening-cover--open .opening-cover__panel--right {
+  transform: rotateY(100deg);
+}
+
+.opening-cover__ornament {
+  font-size: 44px;
+  color: var(--pink-deep);
+  opacity: 0.6;
+}
+
+.opening-cover__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  padding: 24px;
+  color: var(--text-h);
+  pointer-events: none;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.opening-cover--open .opening-cover__content {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.opening-cover__eyebrow {
+  font-family: var(--sans);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.opening-cover__names {
+  font-size: 52px;
+  font-style: italic;
+}
+
+.opening-cover__date {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--pink-deep);
+  letter-spacing: 1px;
+}
+
+.opening-cover__cta {
+  pointer-events: auto;
+  margin-top: 18px;
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: 1px solid var(--pink-deep);
+  background: transparent;
+  color: var(--text-h);
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.opening-cover__cta:hover {
+  background: var(--pink-deep);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .opening-cover__names {
+    font-size: 38px;
+  }
+  .opening-cover__date {
+    font-size: 18px;
+  }
+}

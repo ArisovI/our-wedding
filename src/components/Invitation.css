@@ -1,0 +1,177 @@
+.invitation {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  text-align: center;
+  animation: invitation-fade-in 0.8s ease;
+}
+
+@keyframes invitation-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.invitation__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.invitation__section-title {
+  font-size: 26px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.invitation__section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 48px;
+  height: 2px;
+  background: var(--pink);
+  border-radius: 2px;
+}
+
+.invitation__hero {
+  gap: 18px;
+}
+
+.invitation__eyebrow {
+  font-family: var(--sans);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.invitation__names {
+  font-size: 48px;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.invitation__amp {
+  color: var(--pink-deep);
+  padding: 0 8px;
+}
+
+.invitation__lead {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--text);
+  max-width: 480px;
+}
+
+.invitation__date {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--pink-deep);
+}
+
+.invitation__venue-name {
+  font-size: 18px;
+  color: var(--text-h);
+}
+
+.invitation__map-link {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--pink-deep);
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-h);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.invitation__map-link:hover {
+  background: var(--pink-deep);
+  color: #fff;
+}
+
+.invitation__schedule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invitation__schedule-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: var(--pink-soft);
+  text-align: left;
+}
+
+.invitation__schedule-time {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--pink-deep);
+  min-width: 52px;
+}
+
+.invitation__schedule-title {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.invitation__text {
+  font-size: 16px;
+  max-width: 460px;
+  color: var(--text);
+}
+
+.invitation__footer {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.invitation__footer-ornament {
+  font-size: 24px;
+  color: var(--pink);
+}
+
+.invitation__footer-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--text-h);
+}
+
+@media (max-width: 600px) {
+  .invitation__names {
+    font-size: 36px;
+  }
+}

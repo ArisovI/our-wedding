@@ -1,0 +1,125 @@
+.flip-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.flip-unit__card {
+  position: relative;
+  width: 68px;
+  height: 64px;
+  perspective: 260px;
+}
+
+.flip-unit__row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 32px;
+  overflow: hidden;
+  background: var(--pink-soft);
+  backface-visibility: hidden;
+}
+
+.flip-unit__row--top {
+  top: 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.flip-unit__row--bottom {
+  bottom: 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.flip-unit__row--top .flip-unit__digit {
+  top: 0;
+}
+
+.flip-unit__row--bottom .flip-unit__digit {
+  top: -32px;
+}
+
+.flip-unit__digit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.flip-unit__leaf {
+  transform-style: preserve-3d;
+}
+
+.flip-unit__leaf--top {
+  transform-origin: bottom;
+  animation: flip-leaf-top 300ms ease-in forwards;
+}
+
+.flip-unit__leaf--bottom {
+  transform-origin: top;
+  transform: rotateX(90deg);
+  animation: flip-leaf-bottom 320ms ease-out forwards;
+  animation-delay: 300ms;
+}
+
+@keyframes flip-leaf-top {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flip-leaf-bottom {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.flip-unit__hinge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.flip-unit__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+@media (max-width: 420px) {
+  .flip-unit__card {
+    width: 54px;
+    height: 52px;
+  }
+  .flip-unit__row {
+    height: 26px;
+  }
+  .flip-unit__digit {
+    height: 52px;
+    font-size: 26px;
+  }
+  .flip-unit__row--bottom .flip-unit__digit {
+    top: -26px;
+  }
+}

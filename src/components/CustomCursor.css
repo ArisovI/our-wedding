@@ -1,0 +1,45 @@
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.custom-cursor__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--pink-deep);
+  pointer-events: none;
+  z-index: 300;
+  transition: transform 0.03s linear;
+}
+
+.custom-cursor__trail {
+  position: fixed;
+  inset: 0;
+  z-index: 299;
+  pointer-events: none;
+}
+
+.custom-cursor__particle {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: var(--pink-deep);
+  pointer-events: none;
+  animation: cursor-particle-float 0.7s ease-out forwards;
+}
+
+@keyframes cursor-particle-float {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -150%) scale(0.6);
+  }
+}

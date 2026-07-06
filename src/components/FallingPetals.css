@@ -1,0 +1,35 @@
+.falling-petals {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.falling-petals__petal {
+  position: absolute;
+  top: -10%;
+  color: var(--pink-deep);
+  opacity: 0;
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  92% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(var(--rotate));
+    opacity: 0;
+  }
+}

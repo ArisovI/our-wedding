@@ -1,0 +1,13 @@
+.reveal {
+  opacity: 0;
+  transform: perspective(800px) rotateX(-14deg) translateY(36px);
+  transform-origin: top center;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: none;
+}
