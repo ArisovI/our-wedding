@@ -15,6 +15,7 @@ export interface Translation {
   calendarWeekdays: string[];
   countdownTitle: string;
   units: { days: string; hours: string; minutes: string; seconds: string };
+  addToCalendarText: string;
   dateVenueTitle: string;
   venueName: string;
   venueCity: string;
@@ -48,6 +49,7 @@ export const translations: Record<Lang, Translation> = {
     calendarWeekdays: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
     countdownTitle: "До свадьбы осталось",
     units: { days: "дней", hours: "часов", minutes: "минут", seconds: "секунд" },
+    addToCalendarText: "Добавить в календарь",
     dateVenueTitle: "Локация",
     venueName: "Ресторан «Sultan Saray»",
     venueCity: "г. Нукус",
@@ -84,6 +86,7 @@ export const translations: Record<Lang, Translation> = {
     calendarWeekdays: ["Ds", "Sş", "Sr", "Pş", "Jm", "Şb", "Jk"],
     countdownTitle: "Toyǵa shekem qaldı",
     units: { days: "kún", hours: "saat", minutes: "minut", seconds: "sekund" },
+    addToCalendarText: "Kalendarǵa qosıw",
     dateVenueTitle: "Orın",
     venueName: "«Sultan Saray» restoranı",
     venueCity: "Nókis qalası",

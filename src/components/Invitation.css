@@ -140,6 +140,29 @@
   color: #fff;
 }
 
+.invitation__calendar-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--pink-deep);
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-h);
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.invitation__calendar-btn:hover {
+  background: var(--pink-deep);
+  color: #fff;
+}
+
 .invitation__schedule {
   list-style: none;
   margin: 0;

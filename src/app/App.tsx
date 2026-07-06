@@ -9,6 +9,7 @@ import Confetti from "../components/Confetti";
 import { createConfettiBurst, type ConfettiPiece } from "../components/confetti-utils";
 import CustomCursor from "../components/CustomCursor";
 import ScrollProgress from "../components/ScrollProgress";
+import Preloader from "../components/Preloader";
 import { LanguageProvider } from "../i18n/LanguageContext";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
   return (
     <LanguageProvider>
       <div className="app">
+        <Preloader />
         <CustomCursor />
         <FallingPetals />
         <ScrollProgress />

@@ -5,6 +5,7 @@ import VenueIllustration from "./VenueIllustration";
 import SectionDivider from "./SectionDivider";
 import DressCodeCarousel from "./DressCodeCarousel";
 import { useLanguage } from "../i18n/useLanguage";
+import { buildWeddingIcs, downloadIcs } from "./calendar-ics";
 import "./Invitation.css";
 
 const YANDEX_MAP_URL =
@@ -13,6 +14,17 @@ const GOOGLE_MAP_URL = "https://www.google.com/maps/search/?api=1&query=42.46151
 
 const Invitation = () => {
   const { t } = useLanguage();
+
+  const handleAddToCalendar = () => {
+    const ics = buildWeddingIcs({
+      title: t.namesDisplay,
+      description: t.tagline,
+      location: `${t.venueName}, ${t.venueCity}`,
+      start: new Date("2026-08-01T17:00:00+05:00"),
+      end: new Date("2026-08-01T23:00:00+05:00"),
+    });
+    downloadIcs("wedding-invitation.ics", ics);
+  };
 
   return (
     <main className="invitation">
@@ -35,9 +47,9 @@ const Invitation = () => {
 
       <Reveal>
         <section className="invitation__section">
+          <p className="invitation__date">{t.dateShort}</p>
           <WeddingCalendar />
           <p className="invitation__calendar-caption">{t.calendarCaption}</p>
-          <p className="invitation__date">{t.dateShort}</p>
         </section>
       </Reveal>
 
@@ -47,6 +59,13 @@ const Invitation = () => {
         <section className="invitation__section">
           <h2 className="invitation__section-title">{t.countdownTitle}</h2>
           <Countdown />
+          <button
+            type="button"
+            className="invitation__calendar-btn"
+            onClick={handleAddToCalendar}
+          >
+            {t.addToCalendarText}
+          </button>
         </section>
       </Reveal>
 
