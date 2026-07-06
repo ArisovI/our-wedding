@@ -1,10 +1,15 @@
 import Countdown from "./Countdown";
 import Reveal from "./Reveal";
+import WeddingCalendar from "./WeddingCalendar";
+import VenueIllustration from "./VenueIllustration";
+import SectionDivider from "./SectionDivider";
+import DressCodeCarousel from "./DressCodeCarousel";
 import { useLanguage } from "../i18n/useLanguage";
 import "./Invitation.css";
 
-const MAP_URL =
+const YANDEX_MAP_URL =
   "https://yandex.uz/maps/org/sultan_saray_toyxanasi/195091240855/?ll=59.611947%2C42.461516&z=17";
+const GOOGLE_MAP_URL = "https://www.google.com/maps/search/?api=1&query=42.461516,59.611947";
 
 const Invitation = () => {
   const { t } = useLanguage();
@@ -15,9 +20,28 @@ const Invitation = () => {
         <section className="invitation__section invitation__hero">
           <p className="invitation__eyebrow">{t.tagline}</p>
           <h1 className="invitation__names">{t.namesDisplay}</h1>
-          <p className="invitation__lead">{t.heroLead}</p>
         </section>
       </Reveal>
+
+      <SectionDivider />
+
+      <Reveal>
+        <section className="invitation__section">
+          <p className="invitation__greeting">{t.greeting}</p>
+        </section>
+      </Reveal>
+
+      <SectionDivider />
+
+      <Reveal>
+        <section className="invitation__section">
+          <WeddingCalendar />
+          <p className="invitation__calendar-caption">{t.calendarCaption}</p>
+          <p className="invitation__date">{t.dateShort}</p>
+        </section>
+      </Reveal>
+
+      <SectionDivider />
 
       <Reveal>
         <section className="invitation__section">
@@ -26,21 +50,36 @@ const Invitation = () => {
         </section>
       </Reveal>
 
+      <SectionDivider />
+
       <Reveal>
         <section className="invitation__section">
           <h2 className="invitation__section-title">{t.dateVenueTitle}</h2>
-          <p className="invitation__date">{t.dateShort}</p>
+          <VenueIllustration />
           <p className="invitation__venue-name">{t.venueName}</p>
-          <a
-            className="invitation__map-link"
-            href={MAP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.mapLinkText}
-          </a>
+          <p className="invitation__venue-city">{t.venueCity}</p>
+          <div className="invitation__map-links">
+            <a
+              className="invitation__map-link"
+              href={YANDEX_MAP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.mapYandexText}
+            </a>
+            <a
+              className="invitation__map-link"
+              href={GOOGLE_MAP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.mapGoogleText}
+            </a>
+          </div>
         </section>
       </Reveal>
+
+      <SectionDivider />
 
       <Reveal>
         <section className="invitation__section">
@@ -58,12 +97,17 @@ const Invitation = () => {
         </section>
       </Reveal>
 
+      <SectionDivider />
+
       <Reveal>
         <section className="invitation__section">
           <h2 className="invitation__section-title">{t.dressTitle}</h2>
           <p className="invitation__text">{t.dressText}</p>
+          <DressCodeCarousel />
         </section>
       </Reveal>
+
+      <SectionDivider />
 
       <Reveal>
         <section className="invitation__section">
@@ -71,6 +115,8 @@ const Invitation = () => {
           <p className="invitation__text">{t.giftsText}</p>
         </section>
       </Reveal>
+
+      <SectionDivider />
 
       <Reveal>
         <footer className="invitation__footer">

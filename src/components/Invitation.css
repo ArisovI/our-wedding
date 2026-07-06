@@ -31,7 +31,7 @@
 }
 
 .invitation__section-title {
-  font-size: 26px;
+  font-size: 30px;
   position: relative;
   padding-bottom: 14px;
 }
@@ -56,12 +56,12 @@
   font-family: var(--sans);
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-soft);
 }
 
 .invitation__names {
-  font-size: 48px;
+  font-size: 54px;
   font-style: italic;
   line-height: 1.1;
 }
@@ -71,32 +71,61 @@
   padding: 0 8px;
 }
 
-.invitation__lead {
+.invitation__greeting {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 1.5;
   color: var(--text);
   max-width: 480px;
 }
 
+.invitation__calendar-caption {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text);
+  max-width: 420px;
+}
+
 .invitation__date {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 30px;
   color: var(--pink-deep);
 }
 
+.venue-illustration {
+  width: 160px;
+  height: auto;
+  color: var(--pink-deep);
+  opacity: 0.85;
+}
+
 .invitation__venue-name {
-  font-size: 18px;
+  font-size: 23px;
   color: var(--text-h);
+}
+
+.invitation__venue-city {
+  font-size: 17px;
+  color: var(--text-soft);
+  margin-top: -8px;
+}
+
+.invitation__map-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
 }
 
 .invitation__map-link {
   display: inline-block;
-  margin-top: 6px;
   padding: 10px 26px;
   border-radius: 999px;
   border: 1px solid var(--pink-deep);
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
@@ -134,18 +163,18 @@
 
 .invitation__schedule-time {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 20px;
   color: var(--pink-deep);
   min-width: 52px;
 }
 
 .invitation__schedule-title {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text);
 }
 
 .invitation__text {
-  font-size: 16px;
+  font-size: 18px;
   max-width: 460px;
   color: var(--text);
 }
@@ -166,12 +195,12 @@
 .invitation__footer-text {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 20px;
+  font-size: 22px;
   color: var(--text-h);
 }
 
 @media (max-width: 600px) {
   .invitation__names {
-    font-size: 36px;
+    font-size: 40px;
   }
 }

@@ -81,18 +81,18 @@
   font-family: var(--sans);
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-soft);
 }
 
 .opening-cover__names {
-  font-size: 52px;
+  font-size: 58px;
   font-style: italic;
 }
 
 .opening-cover__date {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 24px;
   color: var(--pink-deep);
   letter-spacing: 1px;
 }
@@ -106,7 +106,7 @@
   background: transparent;
   color: var(--text-h);
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
@@ -122,9 +122,9 @@
 
 @media (max-width: 600px) {
   .opening-cover__names {
-    font-size: 38px;
+    font-size: 42px;
   }
   .opening-cover__date {
-    font-size: 18px;
+    font-size: 20px;
   }
 }

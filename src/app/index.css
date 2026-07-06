@@ -14,7 +14,7 @@
   --serif: 'Cormorant Garamond', 'Times New Roman', serif;
   --sans: 'Montserrat', system-ui, sans-serif;
 
-  font: 18px/145% var(--sans);
+  font: 19px/155% var(--sans);
   color-scheme: light;
   color: var(--text);
   background: var(--bg);

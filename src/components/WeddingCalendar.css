@@ -1,0 +1,48 @@
+.wedding-calendar {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.wedding-calendar__weekdays,
+.wedding-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.wedding-calendar__weekday {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.wedding-calendar__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--text);
+}
+
+.wedding-calendar__cell--empty {
+  visibility: hidden;
+}
+
+.wedding-calendar__cell--marked {
+  background: var(--pink-deep);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 0 4px var(--pink-soft);
+}
