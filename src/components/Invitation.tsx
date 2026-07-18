@@ -4,6 +4,7 @@ import WeddingCalendar from "./WeddingCalendar";
 import VenueIllustration from "./VenueIllustration";
 import SectionDivider from "./SectionDivider";
 import DressCodeCarousel from "./DressCodeCarousel";
+import PhotoDuo from "./PhotoDuo";
 import { useLanguage } from "../i18n/useLanguage";
 import "./Invitation.css";
 
@@ -28,6 +29,15 @@ const Invitation = () => {
       <Reveal>
         <section className="invitation__section">
           <p className="invitation__greeting">{t.greeting}</p>
+        </section>
+      </Reveal>
+
+      <SectionDivider />
+
+      <Reveal>
+        <section className="invitation__section">
+          <h2 className="invitation__section-title">{t.photosTitle}</h2>
+          <PhotoDuo />
         </section>
       </Reveal>
 

@@ -11,6 +11,9 @@ export interface Translation {
   dateShort: string;
   openCta: string;
   greeting: string;
+  photosTitle: string;
+  photoThenCaption: string;
+  photoNowCaption: string;
   calendarCaption: string;
   calendarWeekdays: string[];
   countdownTitle: string;
@@ -43,6 +46,9 @@ export const translations: Record<Lang, Translation> = {
     openCta: "Открыть приглашение",
     greeting:
       "Дорогие родные и друзья! Спешим сообщить вам радостную новость — мы женимся! В этот особенный день мы очень хотим оказаться в окружении самых близких и родных для нас людей.",
+    photosTitle: "Наша история",
+    photoThenCaption: "Тогда",
+    photoNowCaption: "Сейчас",
     calendarCaption:
       "Не пропустите важное событие этого лета — день нашей свадьбы",
     calendarWeekdays: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
@@ -79,6 +85,9 @@ export const translations: Record<Lang, Translation> = {
     openCta: "Shaqırıwdı ashıw",
     greeting:
       "Qádirli aqın-tuwısqanlar hám doslar! Quwanıshlı xabardı sizler menen bólisemiz — biz úylenemiz! Bul ayrıqsha kúni eń jaqın hám qádirli adamlarımız benen bolıwdı qattı qáleymiz.",
+    photosTitle: "Bizdiń tarixımız",
+    photoThenCaption: "Ol waqıtta",
+    photoNowCaption: "Házir",
     calendarCaption:
       "Bul jazdıń eń dıqqatqa ılayıq waqıyasın — toy kúnimizdi — qaldırmań",
     calendarWeekdays: ["Ds", "Sş", "Sr", "Pş", "Jm", "Şb", "Jk"],
