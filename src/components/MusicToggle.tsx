@@ -1,34 +1,18 @@
-import { useRef, useState } from "react";
 import "./MusicToggle.css";
 
-const MusicToggle = () => {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [unavailable, setUnavailable] = useState(false);
+interface MusicToggleProps {
+  isPlaying: boolean;
+  unavailable: boolean;
+  onToggle: () => void;
+}
 
-  const toggle = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-      return;
-    }
-
-    audio
-      .play()
-      .then(() => setIsPlaying(true))
-      .catch(() => setUnavailable(true));
-  };
-
+const MusicToggle = ({ isPlaying, unavailable, onToggle }: MusicToggleProps) => {
   return (
     <div className="music-toggle">
-      <audio ref={audioRef} src="/music.mp3" loop preload="none" />
       <button
         type="button"
         className={`music-toggle__btn${isPlaying ? " music-toggle__btn--playing" : ""}`}
-        onClick={toggle}
+        onClick={onToggle}
         aria-label={isPlaying ? "Выключить музыку" : "Включить музыку"}
         title={
           unavailable
