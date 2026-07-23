@@ -1,18 +1,11 @@
 import { useState } from "react";
-import { useLanguage } from "../i18n/useLanguage";
 import "./PhotoDuo.css";
 
-interface PhotoSlot {
-  src: string;
-  caption: string;
-  variant: "then" | "now";
-}
-
-const PhotoCard = ({ src, caption, variant }: PhotoSlot) => {
+const PhotoDuo = () => {
   const [failed, setFailed] = useState(false);
 
   return (
-    <figure className={`photo-duo__item photo-duo__item--${variant}`}>
+    <figure className="photo-duo">
       {failed ? (
         <div className="photo-duo__placeholder" aria-hidden="true">
           <span className="photo-duo__placeholder-icon">❀</span>
@@ -20,31 +13,13 @@ const PhotoCard = ({ src, caption, variant }: PhotoSlot) => {
       ) : (
         <img
           className="photo-duo__image"
-          src={src}
-          alt={caption}
+          src="/photos/couple.jpg"
+          alt="Илхамбек & Улдаулет"
           loading="lazy"
           onError={() => setFailed(true)}
         />
       )}
-      <figcaption className="photo-duo__caption">{caption}</figcaption>
     </figure>
-  );
-};
-
-const PhotoDuo = () => {
-  const { t } = useLanguage();
-
-  const slots: PhotoSlot[] = [
-    { src: "/photos/childhood.jpg", caption: t.photoThenCaption, variant: "then" },
-    { src: "/photos/couple.jpg", caption: t.photoNowCaption, variant: "now" },
-  ];
-
-  return (
-    <div className="photo-duo">
-      {slots.map((slot) => (
-        <PhotoCard key={slot.src} {...slot} />
-      ))}
-    </div>
   );
 };
 

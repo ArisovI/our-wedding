@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLanguage } from "../i18n/useLanguage";
+import { translation as t } from "../i18n/translations";
 import FlipUnit from "./FlipUnit";
 import "./Countdown.css";
 
@@ -17,7 +17,6 @@ const getTimeLeft = () => {
 
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const id = window.setInterval(() => setTimeLeft(getTimeLeft()), 1000);

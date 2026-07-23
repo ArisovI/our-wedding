@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
-import { useLanguage } from "../i18n/useLanguage";
+import { translation as t } from "../i18n/translations";
 import "./DressCodeCarousel.css";
 
 const DressCodeCarousel = () => {
-  const { t } = useLanguage();
   const [index, setIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
 

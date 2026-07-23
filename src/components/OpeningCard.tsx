@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLanguage } from "../i18n/useLanguage";
+import { translation as t } from "../i18n/translations";
 import "./OpeningCard.css";
 
 interface OpeningCardProps {
@@ -9,7 +9,6 @@ interface OpeningCardProps {
 const OpeningCard = ({ onOpened }: OpeningCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const { t } = useLanguage();
 
   const handleOpen = () => {
     if (isOpen) return;

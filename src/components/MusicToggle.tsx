@@ -16,7 +16,7 @@ const MusicToggle = ({ isPlaying, unavailable, onToggle }: MusicToggleProps) => 
         aria-label={isPlaying ? "Выключить музыку" : "Включить музыку"}
         title={
           unavailable
-            ? "Добавьте файл public/music.mp3, чтобы включить музыку"
+            ? "Добавьте файл public/norm-music.m4a, чтобы включить музыку"
             : undefined
         }
       >

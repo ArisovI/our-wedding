@@ -5,7 +5,7 @@ import VenueIllustration from "./VenueIllustration";
 import SectionDivider from "./SectionDivider";
 import DressCodeCarousel from "./DressCodeCarousel";
 import PhotoDuo from "./PhotoDuo";
-import { useLanguage } from "../i18n/useLanguage";
+import { translation as t } from "../i18n/translations";
 import "./Invitation.css";
 
 const YANDEX_MAP_URL =
@@ -13,8 +13,6 @@ const YANDEX_MAP_URL =
 const GOOGLE_MAP_URL = "https://www.google.com/maps/search/?api=1&query=42.461516,59.611947";
 
 const Invitation = () => {
-  const { t } = useLanguage();
-
   return (
     <main className="invitation">
       <Reveal>

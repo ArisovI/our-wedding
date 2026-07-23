@@ -1,4 +1,4 @@
-import { useLanguage } from "../i18n/useLanguage";
+import { translation as t } from "../i18n/translations";
 import "./WeddingCalendar.css";
 
 const YEAR = 2026;
@@ -21,8 +21,6 @@ const buildCalendarCells = () => {
 const cells = buildCalendarCells();
 
 const WeddingCalendar = () => {
-  const { t } = useLanguage();
-
   return (
     <div className="wedding-calendar">
       <div className="wedding-calendar__weekdays">
